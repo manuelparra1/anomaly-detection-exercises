@@ -8,7 +8,19 @@ def get_lower_and_upper_bounds(series,multiplier):
     
     return lower_bound, upper_bound
 
-def isolate_outliers(df):
+def isolate_outliers(series):
+    '''
+    Parameters
+    ----------
+    series : DataFrame column
+        Array of sample data.
+
+    Returns
+    -------
+    series : DataFrame column
+        The outliers which are defined as
+        being 3 standard deviations outside the mean.
+    '''
     SD = df.std()
     norm_median = df.median()
     
